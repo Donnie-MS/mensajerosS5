@@ -1,0 +1,7 @@
+import mensajeros.*
+test "Roberto(90kg) puede llevar un paquete que está pago en un camión que tiene un acoplado" {
+    roberto.transporte(camion)
+    camion.cantDeAcoplados(1)
+    assert.that(puenteDeBrooklyn.puedePasar(roberto))
+}
+

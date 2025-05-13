@@ -1,3 +1,4 @@
+import paquetes.*
 //Destinos
 object puenteDeBrooklyn {
     method puedePasar(unMensajero) = unMensajero.peso() <= 1000
@@ -18,11 +19,13 @@ object roberto {
         return 90 + transporteActual.peso()
     }
     method puedeLlamar() = false
+    method puedeViajarATodosLosDestinos() = puenteDeBrooklyn.puedePasar(self) && laMatrix.puedePasar(self)
 }
 
 object chuckNorris {
     method peso() = 80
     method puedeLlamar() = true 
+    method puedeViajarATodosLosDestinos() = puenteDeBrooklyn.puedePasar(self) && laMatrix.puedePasar(self)
 }
 
 object neo {
@@ -32,6 +35,7 @@ object neo {
     method cambiarCredito() {
         tieneCredito = !tieneCredito
     }
+    method puedeViajarATodosLosDestinos() = puenteDeBrooklyn.puedePasar(self) && laMatrix.puedePasar(self)
 }
 
 //transportes
